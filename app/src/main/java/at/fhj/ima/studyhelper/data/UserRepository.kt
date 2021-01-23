@@ -12,6 +12,10 @@ object UserRepository {
         )
     }
 
+    fun readUserList(): MutableList<Users>{
+        return userList
+    }
+
     fun addUser(username: String, password:String) {
         val User = Users(username, password)
         userList.add(User)

@@ -10,25 +10,13 @@
         android:id="@+id/landing_username_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="250dp"
+        android:layout_marginTop="150dp"
         android:ems="10"
         android:hint="Username"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/landing_password"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:ems="10"
-        android:hint="Password"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="@+id/landing_username_login"
-        app:layout_constraintStart_toStartOf="@+id/landing_username_login"
-        app:layout_constraintTop_toBottomOf="@+id/landing_username_login" />
 
     <Button
         android:id="@+id/landing_button_login"
@@ -39,4 +27,16 @@
         app:layout_constraintEnd_toEndOf="@+id/landing_password"
         app:layout_constraintStart_toStartOf="@+id/landing_password"
         app:layout_constraintTop_toBottomOf="@+id/landing_password" />
+
+    <EditText
+        android:id="@+id/landing_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="@+id/landing_username_login"
+        app:layout_constraintStart_toStartOf="@+id/landing_username_login"
+        app:layout_constraintTop_toBottomOf="@+id/landing_username_login" />
 </androidx.constraintlayout.widget.ConstraintLayout>

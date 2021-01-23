@@ -4,7 +4,9 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import at.fhj.ima.studyhelper.R
+import at.fhj.ima.studyhelper.data.UserRepository
 import kotlinx.android.synthetic.main.activity_landing.*
 
 
@@ -21,9 +23,7 @@ class LandingActivity : AppCompatActivity() {
         val sharedPreferences = getSharedPreferences(packageName, Context.MODE_PRIVATE)
 
         val savedUsername = sharedPreferences.getString(usernameKey, null)
-        landing_username_login.setText(savedUsername)
         val savedPassword = sharedPreferences.getString(passwordKey, null)
-        landing_password.setText(savedPassword)
 
         if (savedUsername != null || savedPassword != null) {
             val intent = Intent(this, MainActivity::class.java)
@@ -31,13 +31,24 @@ class LandingActivity : AppCompatActivity() {
         }
 
         landing_button_login.setOnClickListener {
-        val sharedPreferences = getSharedPreferences(packageName, Context.MODE_PRIVATE)
+            for (user in UserRepository.readUserList()) {
+                if (landing_username_login.text.toString() != user.username) {
 
-            sharedPreferences.edit().putString(usernameKey, landing_username_login.text.toString()).apply()
-            sharedPreferences.edit().putString(passwordKey, landing_password.text.toString()).apply()
+                    val sharedPreferences = getSharedPreferences(packageName, Context.MODE_PRIVATE)
 
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
+                    sharedPreferences.edit().putString(usernameKey, landing_username_login.text.toString()).apply()
+                    sharedPreferences.edit().putString(passwordKey, landing_password.text.toString()).apply()
+
+                    val intent = Intent(this, RegisterAcitivity::class.java)
+                    startActivity(intent)
+                } else if (landing_password.text.toString() != user.password) {
+                    Toast.makeText(this, "It seems the password was incorrect!", Toast.LENGTH_SHORT).show()
+                }
+                else {
+                    val intent = Intent(this, MainActivity::class.java)
+                    startActivity(intent)
+                }
+            }
         }
     }
 }
