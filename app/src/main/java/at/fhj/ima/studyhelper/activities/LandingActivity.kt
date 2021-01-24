@@ -31,17 +31,16 @@ class LandingActivity : AppCompatActivity() {
         }
 
         landing_button_login.setOnClickListener {
-            for (user in UserRepository.readUserList()) {
-                if (landing_username_login.text.toString() != user.username) {
+            val databaseUser = UserRepository.findUser(this, (landing_username_login.text.toString()))
 
-                    val sharedPreferences = getSharedPreferences(packageName, Context.MODE_PRIVATE)
+                if (databaseUser?.username != landing_username_login.text.toString()) {
 
                     sharedPreferences.edit().putString(usernameKey, landing_username_login.text.toString()).apply()
                     sharedPreferences.edit().putString(passwordKey, landing_password.text.toString()).apply()
 
-                    val intent = Intent(this, RegisterAcitivity::class.java)
+                    val intent = Intent(this, RegisterActivity::class.java)
                     startActivity(intent)
-                } else if (landing_password.text.toString() != user.password) {
+                } else if (databaseUser.password != landing_password.text.toString()) {
                     Toast.makeText(this, "It seems the password was incorrect!", Toast.LENGTH_SHORT).show()
                 }
                 else {
@@ -51,4 +50,3 @@ class LandingActivity : AppCompatActivity() {
             }
         }
     }
-}

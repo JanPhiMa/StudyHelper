@@ -8,10 +8,12 @@ import android.widget.Toast
 import at.fhj.ima.studyhelper.R
 import at.fhj.ima.studyhelper.activities.LandingActivity.Companion.passwordKey
 import at.fhj.ima.studyhelper.activities.LandingActivity.Companion.usernameKey
+import at.fhj.ima.studyhelper.classes.Users
 import at.fhj.ima.studyhelper.data.UserRepository
+import at.fhj.ima.studyhelper.data.UsersDao
 import kotlinx.android.synthetic.main.activity_register_acitivity.*
 
-class RegisterAcitivity : AppCompatActivity() {
+class RegisterActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,7 +30,8 @@ class RegisterAcitivity : AppCompatActivity() {
             if (register_password2_text.text.toString() != savedPassword) {
                 Toast.makeText(this, "Passwords don't match!", Toast.LENGTH_SHORT).show()
             } else {
-                UserRepository.addUser(savedUsername.toString(), savedPassword.toString())
+                val addUser = Users(savedUsername.toString(), savedPassword.toString())
+                UserRepository.addUser(this, addUser)
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
             }

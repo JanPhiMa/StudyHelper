@@ -1,5 +1,8 @@
 package at.fhj.ima.studyhelper.classes
 
-class Users(val username:String, val password: String) {
-    
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity
+class Users(@PrimaryKey val username:String, val password: String) {
 }

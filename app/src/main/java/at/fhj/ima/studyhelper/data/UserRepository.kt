@@ -1,23 +1,21 @@
 package at.fhj.ima.studyhelper.data
 
+import android.content.Context
+import androidx.room.Ignore
 import at.fhj.ima.studyhelper.classes.Users
-import at.fhj.ima.studyhelper.data.UserRepository.userList
+
 
 object UserRepository {
-    private val userList: MutableList<Users>
 
-    init {
-        userList = mutableListOf(
-            Users("Test", "Pa55w.rd")
-        )
+    fun addUser(context: Context, user: Users) {
+        val applicationContext = context.applicationContext
+        val db = UserDatabase.getDatabase(applicationContext)
+        db.usersDao.insert(user)
     }
 
-    fun readUserList(): MutableList<Users>{
-        return userList
-    }
-
-    fun addUser(username: String, password:String) {
-        val User = Users(username, password)
-        userList.add(User)
+    fun findUser(context: Context, username: String):Users? {
+        val applicationContext = context.applicationContext
+        val db = UserDatabase.getDatabase(applicationContext)
+        return db.usersDao.findUsersByUsername(username)
     }
 }
