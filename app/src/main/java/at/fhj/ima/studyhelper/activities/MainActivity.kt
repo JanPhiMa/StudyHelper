@@ -18,6 +18,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import at.fhj.ima.studyhelper.R
 import kotlinx.android.synthetic.main.activity_landing.*
+import kotlinx.android.synthetic.main.app_bar_main.*
+import kotlinx.android.synthetic.main.fragment_home.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -46,6 +48,16 @@ class MainActivity : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
+        activity_main_studyprogram.setOnClickListener {
+            val studyIntent = Intent(this, StudyProgramActivity::class.java)
+            startActivity(studyIntent)
+        }
+
+        activity_main_button_courses.setOnClickListener {
+            val courseIntent = Intent(this, CoursesActivity::class.java)
+            startActivity(courseIntent)
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
