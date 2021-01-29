@@ -15,32 +15,26 @@ import kotlinx.android.synthetic.main.activity_study_program.*
 import kotlinx.android.synthetic.main.item_studyprogram.*
 
 class CoursesActivity : AppCompatActivity() {
-    companion object {
-        val studyProgramKey = "STUDYPROGRAM"
+
+    val coursesAdapter = CoursesAdapter(){
+        val intent = Intent(this, CoursesSingleActivity::class.java)
+        startActivity(intent)
     }
-
-    val sharedPreferences = getSharedPreferences(packageName, Context.MODE_PRIVATE)
-    val savedStudyProgram = sharedPreferences.getString(studyProgramKey, null)
-
-    val coursesAdapter = CoursesAdapter()
-    val studyProgramAdapter = StudyProgramAdapter()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_courses)
 
-        //Übergibt Information nicht
-        item_studyprogram_button.setOnClickListener {
-            sharedPreferences.edit().putString(studyProgramKey, item_studyprogram_studyprogram.text.toString()).apply()
-            val intent = Intent (this, CoursesActivity::class.java)
-            startActivity(intent)
-        }
+        //val sharedPreferences = getSharedPreferences(packageName, Context.MODE_PRIVATE)
 
-       if (savedStudyProgram != null) {
-           coursesAdapter.updateListFiltered(CoursesRepository.coursesList(), savedStudyProgram)
-       } else {
-           coursesAdapter.updateList(CoursesRepository.coursesList())
-       }
+        val programName = intent.getStringExtra(StudyProgramActivity.EXTRA_PROGRAM_PROGRAM)
+
+
+        if (programName != null){
+            coursesAdapter.updateListFiltered(CoursesRepository.coursesList(), programName)
+        } else {
+            coursesAdapter.updateList(CoursesRepository.coursesList())
+        }
         activity_courses_recyclerview.layoutManager = LinearLayoutManager(this)
         activity_courses_recyclerview.adapter = coursesAdapter
     }

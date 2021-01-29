@@ -23,6 +23,10 @@ import kotlinx.android.synthetic.main.fragment_home.*
 
 class MainActivity : AppCompatActivity() {
 
+    companion object {
+        val EXTRA_PROGRAM_NAME = "NAME_PROGRAM_EXTRA"
+    }
+
     private lateinit var appBarConfiguration: AppBarConfiguration
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -49,13 +53,20 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
+        /*
         activity_main_studyprogram.setOnClickListener {
             val studyIntent = Intent(this, StudyProgramActivity::class.java)
             startActivity(studyIntent)
         }
 
+        val studyProgram = intent.getStringExtra(StudyProgramActivity.EXTRA_PROGRAM_PROGRAM)
+
+        */
+
+
         activity_main_button_courses.setOnClickListener {
             val courseIntent = Intent(this, CoursesActivity::class.java)
+            //intent.putExtra(EXTRA_PROGRAM_NAME, intent.getStringExtra(StudyProgramActivity.EXTRA_PROGRAM_PROGRAM))
             startActivity(courseIntent)
         }
     }
