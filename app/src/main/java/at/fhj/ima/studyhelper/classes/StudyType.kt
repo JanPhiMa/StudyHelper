@@ -1,4 +1,4 @@
 package at.fhj.ima.studyhelper.classes
 
-class StudyType {
+class StudyType (val type: String, val text: String) {
 }

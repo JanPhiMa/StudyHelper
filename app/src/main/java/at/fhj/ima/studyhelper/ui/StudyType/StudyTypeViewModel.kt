@@ -10,4 +10,8 @@ class StudyTypeViewModel : ViewModel() {
         value = "Find out what Study Type you are."
     }
     val text: LiveData<String> = _text
+
+    fun setText(string:String){
+        _text.value = string
+    }
 }
