@@ -18,4 +18,15 @@ object UserRepository {
         val db = UserDatabase.getDatabase(applicationContext)
         return db.usersDao.findUsersByUsername(username)
     }
+
+    fun addStudyProgram(context: Context, username: String, studyProgram: String) {
+        val applicationContext = context.applicationContext
+        val db = UserDatabase.getDatabase(applicationContext)
+        return db.usersDao.insertStudyProgram(username, studyProgram)
+    }
+    fun addSemester(context: Context, username: String, semester: String) {
+        val applicationContext = context.applicationContext
+        val db = UserDatabase.getDatabase(applicationContext)
+        return db.usersDao.insertSemester(username, semester)
+    }
 }

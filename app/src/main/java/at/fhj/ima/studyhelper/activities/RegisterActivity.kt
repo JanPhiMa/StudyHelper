@@ -32,7 +32,7 @@ class RegisterActivity : AppCompatActivity() {
             } else {
                 val addUser = Users(savedUsername.toString(), savedPassword.toString())
                 UserRepository.addUser(this, addUser)
-                val intent = Intent(this, MainActivity::class.java)
+                val intent = Intent(this, StudyProgramActivity::class.java)
                 startActivity(intent)
             }
         }

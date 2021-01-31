@@ -14,6 +14,7 @@ class LandingActivity : AppCompatActivity() {
     companion object {
         val usernameKey = "USERNAME"
         val passwordKey = "PASSWORD"
+        val EXTRA_USERNAME_USERNAME = "USERNAME_USERNAME_EXTRA"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
