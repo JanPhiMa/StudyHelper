@@ -33,10 +33,10 @@ class LandingActivity : AppCompatActivity() {
         landing_button_login.setOnClickListener {
             val databaseUser = UserRepository.findUser(this, (landing_username_login.text.toString()))
 
-                if (databaseUser?.username != landing_username_login.text.toString()) {
+            sharedPreferences.edit().putString(usernameKey, landing_username_login.text.toString()).apply()
+            sharedPreferences.edit().putString(passwordKey, landing_password.text.toString()).apply()
 
-                    sharedPreferences.edit().putString(usernameKey, landing_username_login.text.toString()).apply()
-                    sharedPreferences.edit().putString(passwordKey, landing_password.text.toString()).apply()
+                if (databaseUser?.username != landing_username_login.text.toString()) {
 
                     val intent = Intent(this, RegisterActivity::class.java)
                     startActivity(intent)
