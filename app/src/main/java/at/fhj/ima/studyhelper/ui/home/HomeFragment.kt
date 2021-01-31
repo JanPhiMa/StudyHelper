@@ -1,6 +1,8 @@
 package at.fhj.ima.studyhelper.ui.home
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,11 +13,14 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import at.fhj.ima.studyhelper.activities.LandingActivity.Companion.usernameKey
 import at.fhj.ima.studyhelper.R
 import at.fhj.ima.studyhelper.activities.CoursesSingleActivity
+import at.fhj.ima.studyhelper.activities.LandingActivity
 import at.fhj.ima.studyhelper.activities.StudyProgramActivity
 import at.fhj.ima.studyhelper.adapters.CoursesAdapter
 import at.fhj.ima.studyhelper.data.CoursesRepository
+import at.fhj.ima.studyhelper.data.UserRepository
 import kotlinx.android.synthetic.main.fragment_home.*
 
 class HomeFragment : Fragment() {
@@ -33,6 +38,7 @@ class HomeFragment : Fragment() {
 
     private lateinit var homeViewModel: HomeViewModel
 
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -49,12 +55,17 @@ class HomeFragment : Fragment() {
         homeViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
+        val textView2: TextView = root.findViewById(R.id.text_home_2)
+        homeViewModel.text2.observe(viewLifecycleOwner, Observer {
+            textView2.text = it
+        })
         return root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val sharedPreferences = requireActivity().getSharedPreferences(requireActivity().packageName, Context.MODE_PRIVATE)
 
     val coursesAdapter = CoursesAdapter(){
         val intent = Intent(activity, CoursesSingleActivity::class.java)
@@ -65,19 +76,18 @@ class HomeFragment : Fragment() {
         intent.putExtra(EXTRA_COURSE_SWS, it.SWS.toString())
         startActivity(intent)
     }
+        val programName = UserRepository.findUser(requireActivity().applicationContext, sharedPreferences.getString(usernameKey, null).toString())?.studyProgram
+        val coursesSemester = UserRepository.findUser(requireActivity().applicationContext, sharedPreferences.getString(usernameKey, null).toString())?.semester
 
-        val programName = requireActivity().intent.getStringExtra(StudyProgramActivity.EXTRA_PROGRAM_PROGRAM)
-        val coursesSemester = requireActivity().intent.getStringExtra(StudyProgramActivity.EXTRA_PROGRAM_SEMESTER)
+
 
         when {
             programName != null && coursesSemester != null -> { coursesAdapter.updateListFilteredForSemester(CoursesRepository.coursesList(), programName, coursesSemester)
                                                                     Toast.makeText(requireActivity().applicationContext, coursesSemester, Toast.LENGTH_SHORT).show()}
             else -> coursesAdapter.updateList(CoursesRepository.coursesList())
         }
-
         fragment_home_recyclerview.layoutManager = LinearLayoutManager(activity)
         fragment_home_recyclerview.adapter = coursesAdapter
-
 
     }
     }

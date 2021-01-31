@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import at.fhj.ima.studyhelper.R
 import at.fhj.ima.studyhelper.classes.Courses
+import at.fhj.ima.studyhelper.data.UserRepository
 import at.fhj.ima.studyhelper.ui.home.HomeFragment
 import at.fhj.ima.studyhelper.ui.home.HomeFragment.Companion.EXTRA_COURSE_COURSE
 import kotlinx.android.synthetic.main.activity_courses_single.*
@@ -23,8 +24,9 @@ class CoursesSingleActivity : AppCompatActivity() {
         val sharedPreferences = getSharedPreferences(packageName, Context.MODE_PRIVATE)
         val previousComments = sharedPreferences.getString(commentKey, activity_courses_single_notesection.getText().toString())
 
-
-        sharedPreferences.edit().putString(commentKey, activity_courses_single_notesection.getText().toString())
+        activity_courses_single_notesection.setOnClickListener {
+            sharedPreferences.edit().putString(commentKey, activity_courses_single_notesection.getText().toString()).apply()
+        }
 
 
         activity_courses_single_course.text = intent.getStringExtra(HomeFragment.EXTRA_COURSE_COURSE)

@@ -4,5 +4,5 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity
-class Users(@PrimaryKey val username:String, val password: String) {
+class Users(@PrimaryKey val username:String, val password: String, var studyProgram: String = "", var semester: String = "") {
 }
