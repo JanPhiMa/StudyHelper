@@ -115,7 +115,7 @@ object CoursesRepository {
             ),
             Courses(
                 "Informatik 2 für informationsmanagerinnen",
-                "Peter Salhofer",
+                "Peter Salhofer, Lukas Bloder",
                 2,
                 5.0,
                 4.0,
@@ -264,8 +264,87 @@ object CoursesRepository {
                         1.5,
                         1.0,
                         "Gesundheitsinformatik"
+                ),
+                Courses(
+                        "Mediengeschichte und Medienentwicklung",
+                        "Heinz Peter Wassermann",
+                        1,
+                        4.0,
+                        3.0,
+                        "Journalismus und Public Relations"
+                ),
+                Courses(
+                        "Theorie und Praxis in der Kommunikation",
+                        "Heinz Fischer",
+                        1,
+                        4.0,
+                        2.0,
+                        "Journalismus und Public Relations"
+                ),
+                Courses(
+                        "Berufe im Journalismus und in der Kommunikationsbranche",
+                        "Nikolaus Koller, Wolfgang Kühnelt",
+                        1,
+                        4.0,
+                        2.0,
+                        "Journalismus und Public Relations"
+                ),
+                Courses(
+                        "Grundlagen der PR",
+                        "Gudrun Reimerth",
+                        1,
+                        2.0,
+                        2.0,
+                        "Journalismus und Public Relations"
+                ),
+                Courses(
+                        "Grundlagen des Journalismus",
+                        "Nikolaus Koller, Thomas Wolkinger",
+                        1,
+                        2.0,
+                        2.0,
+                        "Journalismus und Public Relations"
+                ),
+                Courses(
+                        "Englisch: News Writing",
+                        "Edith Podhovnik",
+                        1,
+                        2.0,
+                        2.0,
+                        "Journalismus und Public Relations"
+                ),
+                Courses (
+                        "Newsroom: Journalistisches Schreiben",
+                        "Peter Kolb, Donja Noormofidi",
+                        1,
+                        4.0,
+                        3.0,
+                        "Journalismus und Public Relations"
+                ),
+                Courses (
+                        "PR-Labor: Texten in der Kommunikationspraxis",
+                        "Wolfgang Kühnelt, Gudrun Reimerth",
+                        1,
+                        2.0,
+                        2.0,
+                        "Journalismus und Public Relations"
+                ),
+                Courses (
+                        "Grundlagen der Webtechnik",
+                        "Boris Böttinger",
+                        1,
+                        2.0,
+                        2.0,
+                        "Journalismus und Public Relations"
+                ),
+                Courses(
+                        "Webkompetenz für Kommunikationsberufe",
+                        "Eva Goldgruber, Jutta Pauschenwein",
+                        1,
+                        4.0,
+                        3.0,
+                        "Journalismus und Public Relations"
                 )
-
         )
     }
     fun coursesList(): MutableList<Courses>{

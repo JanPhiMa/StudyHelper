@@ -14,6 +14,7 @@ class LandingActivity : AppCompatActivity() {
     companion object {
         val usernameKey = "USERNAME"
         val passwordKey = "PASSWORD"
+        val EXTRA_USERNAME_USERNAME = "USERNAME_USERNAME_EXTRA"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,6 +28,7 @@ class LandingActivity : AppCompatActivity() {
 
         if (savedUsername != null || savedPassword != null) {
             val intent = Intent(this, MainActivity::class.java)
+            intent.putExtra(EXTRA_USERNAME_USERNAME, savedUsername)
             startActivity(intent)
         }
 
@@ -40,6 +42,7 @@ class LandingActivity : AppCompatActivity() {
 
                     val intent = Intent(this, RegisterActivity::class.java)
                     startActivity(intent)
+
                 } else if (databaseUser.password != landing_password.text.toString()) {
                     Toast.makeText(this, "It seems the password was incorrect!", Toast.LENGTH_SHORT).show()
                 }

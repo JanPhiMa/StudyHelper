@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import at.fhj.ima.studyhelper.R
 import at.fhj.ima.studyhelper.adapters.CoursesAdapter
@@ -18,13 +19,16 @@ class StudyProgramActivity : AppCompatActivity() {
     companion object {
         //val studyProgramKey = "STUDYPROGRAM"
         val EXTRA_PROGRAM_PROGRAM = "PROGRAM_PROGRAM_EXTRA"
+        val EXTRA_PROGRAM_SEMESTER = "SEMESTER_PROGRAM_EXTRA"
     }
 
     val studyProgramAdapter = StudyProgramAdapter(){
-        val intent = Intent (this, CoursesActivity::class.java)
+        val intent = Intent (this, MainActivity::class.java)
         intent.putExtra(EXTRA_PROGRAM_PROGRAM, it.StudyProgram)
+        intent.putExtra(EXTRA_PROGRAM_SEMESTER, editTextNumber.text.toString())
         //val sharedPreferences = getSharedPreferences(packageName, Context.MODE_PRIVATE)
         //sharedPreferences.edit().putString(StudyProgramActivity.studyProgramKey, item_studyprogram_studyprogram.text.toString()).apply()
+
 
         startActivity(intent)
     }

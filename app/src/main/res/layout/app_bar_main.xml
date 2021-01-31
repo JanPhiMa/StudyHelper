@@ -19,18 +19,6 @@
             android:background="?attr/colorPrimary"
             app:popupTheme="@style/Theme.StudyHelper.PopupOverlay" />
 
-        <Button
-            android:id="@+id/activity_main_studyprogram"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Studyprogram" />
-
-        <Button
-            android:id="@+id/activity_main_button_courses"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Courses" />
-
     </com.google.android.material.appbar.AppBarLayout>
 
     <include layout="@layout/content_main" />

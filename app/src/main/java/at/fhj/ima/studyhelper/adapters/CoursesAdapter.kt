@@ -36,16 +36,13 @@ class CoursesAdapter(val clickListener: (courses: Courses) -> Unit): RecyclerVie
 
     }
 
-
-    //Filterung funktioniert nicht
-    fun updateListFiltered (newList: MutableList<Courses>, programSearch: String) {
+    fun updateListFilteredForSemester (newList: MutableList<Courses>, programSearch: String, semesterSearch: String? = "1") {
         for (course in newList){
-            if (course.Program == programSearch) {
+            if (course.Program == programSearch && course.Semester.toString() == semesterSearch) {
                 coursesList.add(course)
                 coursesList
             }
         }
-       // coursesList = newList //Ohne diese Zeile gar keine Courses
         notifyDataSetChanged()
     }
 

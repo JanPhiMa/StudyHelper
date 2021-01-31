@@ -12,6 +12,8 @@
         <activity android:name=".activities.CoursesSingleActivity"></activity>
         <activity android:name=".activities.CoursesActivity" />
         <activity android:name=".activities.StudyProgramActivity" />
+=======
+        <activity android:name=".activities.StudyTypeActivity"></activity>
         <activity android:name=".activities.RegisterActivity" />
         <activity
             android:name=".activities.MainActivity"
