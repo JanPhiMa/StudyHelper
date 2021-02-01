@@ -3,35 +3,42 @@ package at.fhj.ima.studyhelper.activities
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import at.fhj.ima.studyhelper.R
 import at.fhj.ima.studyhelper.classes.Courses
 import at.fhj.ima.studyhelper.ui.home.HomeFragment
 import at.fhj.ima.studyhelper.ui.home.HomeFragment.Companion.EXTRA_COURSE_COURSE
+import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_courses_single.*
 
 class CoursesSingleActivity : AppCompatActivity() {
-    companion object {
-        val commentKey = "COMMENT"
-    }
-
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_courses_single)
+       // setSupportActionBar(findViewById(R.id.toolbar))
 
-        val sharedPreferences = getSharedPreferences(packageName, Context.MODE_PRIVATE)
-        val previousComments = sharedPreferences.getString(commentKey, activity_courses_single_notesection.getText().toString())
+        /*findViewById<FloatingActionButton>(R.id.fab).setOnClickListener { view ->
+            Snackbar.make(view, "Calling the API", Snackbar.LENGTH_LONG)
+                .setAction("Action", null).show()
 
-
-        sharedPreferences.edit().putString(commentKey, activity_courses_single_notesection.getText().toString())
-
-
-        activity_courses_single_course.text = intent.getStringExtra(HomeFragment.EXTRA_COURSE_COURSE)
-        activity_courses_single_semester.text = "Semester of relevance: " + intent.getStringExtra(HomeFragment.EXTRA_COURSE_SEMESTER)
-        activity_courses_single_lecturer.text = "Course Lecturer(s): " + intent.getStringExtra(HomeFragment.EXTRA_COURSE_LECTURER)
-        activity_courses_single_ects.text = "Course ECTS Credits: " + intent.getStringExtra(HomeFragment.EXTRA_COURSE_ECTS)
-        activity_courses_single_sws.text = "Weekly hours: " + intent.getStringExtra(HomeFragment.EXTRA_COURSE_SWS)
-        activity_courses_single_notesection.setText(previousComments)
+        }*/
     }
+   /* override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        menuInflater.inflate(R.menu.menu_courses_single, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        return when (item.itemId) {
+            R.id.action_settings -> true
+            else -> super.onOptionsItemSelected(item)
+        }
+    }*/
 }
