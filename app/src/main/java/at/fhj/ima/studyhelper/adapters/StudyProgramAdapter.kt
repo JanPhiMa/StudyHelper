@@ -44,7 +44,7 @@ class StudyProgramViewHolder(itemView: View, val clickListener: (studyProgram: S
         itemView.item_studyprogram_department.text = studyProgram.Department
         itemView.item_studyprogram_semesters.text = studyProgram.Semesters.toString()
         itemView.item_studyprogram_type.text = studyProgram.Type
-        itemView.item_studyprogram_button.text = studyProgram.StudyProgram
+        itemView.item_studyprogram_header.text = studyProgram.StudyProgram
         itemView.setOnClickListener {
             clickListener(studyProgram)
         }

@@ -11,6 +11,7 @@ import at.fhj.ima.studyhelper.activities.LandingActivity.Companion.usernameKey
 import at.fhj.ima.studyhelper.classes.Users
 import at.fhj.ima.studyhelper.data.UserRepository
 import at.fhj.ima.studyhelper.data.UsersDao
+import kotlinx.android.synthetic.main.activity_landing.*
 import kotlinx.android.synthetic.main.activity_register_acitivity.*
 
 class RegisterActivity : AppCompatActivity() {
@@ -27,13 +28,18 @@ class RegisterActivity : AppCompatActivity() {
         register_password_text.setText(savedPassword)
 
         register_signup_button.setOnClickListener() {
-            if (register_password2_text.text.toString() != savedPassword) {
-                Toast.makeText(this, "Passwords don't match!", Toast.LENGTH_SHORT).show()
-            } else {
-                val addUser = Users(savedUsername.toString(), savedPassword.toString())
-                UserRepository.addUser(this, addUser)
-                val intent = Intent(this, StudyProgramActivity::class.java)
-                startActivity(intent)
+            when {
+                register_username_text.text.length < 5 -> Toast.makeText(this, "Entered username is to short!", Toast.LENGTH_SHORT).show()
+                register_password_text.text.length < 12 -> Toast.makeText(this, "Password needs to be at least 8 characters long!", Toast.LENGTH_SHORT).show()
+                register_password2_text.text.toString() != register_password_text.text.toString() -> Toast.makeText(this, "Passwords don't match!", Toast.LENGTH_SHORT).show()
+                else -> {
+                    val addUser = Users(register_username_text.text.toString(), register_password_text.text.toString())
+                    UserRepository.addUser(this, addUser)
+                    sharedPreferences.edit().putString(usernameKey, register_username_text.text.toString()).apply()
+                    sharedPreferences.edit().putString(passwordKey, register_password_text.text.toString()).apply()
+                    val intent = Intent(this, StudyProgramActivity::class.java)
+                    startActivity(intent)
+                }
             }
         }
     }

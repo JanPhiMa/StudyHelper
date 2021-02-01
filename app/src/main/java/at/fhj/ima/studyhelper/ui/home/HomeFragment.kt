@@ -27,7 +27,6 @@ class HomeFragment : Fragment() {
 
 
    companion object {
-       val EXTRA_PROGRAM_NAME = "NAME_PROGRAM_EXTRA"
        val EXTRA_COURSE_COURSE = "COURSE_COURSE_EXTRA"
        val EXTRA_COURSE_LECTURER = "LECTURER_COURSE_EXTRA"
        val EXTRA_COURSE_SEMESTER = "SEMESTER_COURSE_EXTRA"
@@ -82,8 +81,7 @@ class HomeFragment : Fragment() {
 
 
         when {
-            programName != null && coursesSemester != null -> { coursesAdapter.updateListFilteredForSemester(CoursesRepository.coursesList(), programName, coursesSemester)
-                                                                    Toast.makeText(requireActivity().applicationContext, coursesSemester, Toast.LENGTH_SHORT).show()}
+            programName != null && coursesSemester != null -> coursesAdapter.updateListFilteredForSemester(CoursesRepository.coursesList(), programName, coursesSemester)
             else -> coursesAdapter.updateList(CoursesRepository.coursesList())
         }
         fragment_home_recyclerview.layoutManager = LinearLayoutManager(activity)

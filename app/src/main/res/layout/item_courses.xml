@@ -16,6 +16,7 @@
             android:id="@+id/item_courses_textview_ects"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:text="ECTS Credits:"
             app:layout_constraintStart_toStartOf="parent"
@@ -25,6 +26,7 @@
             android:id="@+id/item_courses_textview_semester"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:text="Semester:"
             app:layout_constraintStart_toStartOf="parent"
@@ -34,6 +36,7 @@
             android:id="@+id/item_courses_textview_lecturer"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:text="Lecturer(s):"
             app:layout_constraintStart_toStartOf="parent"
@@ -43,17 +46,21 @@
             android:id="@+id/item_courses_lecturer"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/item_courses_textview_lecturer"
+            app:layout_constraintStart_toStartOf="@+id/item_courses_semesters"
             app:layout_constraintTop_toBottomOf="@+id/item_courses_course" />
 
         <TextView
             android:id="@+id/item_courses_course"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:textSize="24sp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="Course"
+            android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -62,10 +69,10 @@
             android:id="@+id/item_courses_semesters"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/item_courses_textview_semester"
+            app:layout_constraintStart_toStartOf="@+id/item_courses_ects"
             app:layout_constraintTop_toBottomOf="@+id/item_courses_lecturer" />
 
         <TextView
@@ -74,6 +81,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/item_courses_textview_ects"
             app:layout_constraintTop_toBottomOf="@+id/item_courses_semesters" />
@@ -82,18 +90,23 @@
             android:id="@+id/item_courses_sws"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/item_courses_textview_sws"
+            app:layout_constraintStart_toStartOf="@+id/item_courses_ects"
             app:layout_constraintTop_toBottomOf="@+id/item_courses_ects" />
 
         <TextView
             android:id="@+id/item_courses_textview_sws"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
             android:text="SWS:"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/item_courses_textview_ects" />
     </androidx.constraintlayout.widget.ConstraintLayout>
