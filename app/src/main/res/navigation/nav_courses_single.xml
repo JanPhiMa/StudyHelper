@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/CoursesSingleActivityFragment">
+
+    <fragment
+        android:id="@+id/CoursesSingleActivityFragment"
+        android:name="at.fhj.ima.studyhelper.ui.coursesCamera.CoursesSingleActivityFragment"
+        android:label="CoursesSingleActivityFragment_Label"
+        tools:layout="CoursesSingleActivityFragment_First">
+
+        <action
+            android:id="@+id/action_main_to_camera"
+            app:destination="@id/CameraFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/CameraFragment"
+        android:name="at.fhj.ima.studyhelper.ui.coursesCamera.CameraFragment"
+        android:label="CameraFragment_Label"
+        tools:layout="@layout/fragment_camera">
+    </fragment>
+</navigation>
