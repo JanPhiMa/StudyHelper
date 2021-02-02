@@ -4,15 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@mipmap/pic_background_foreground"
     tools:context=".FirstFragment">
 
     <TextView
         android:id="@+id/activity_courses_single_course"
+        style="@style/Heading"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
+        android:text="Test"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,44 +20,49 @@
 
     <TextView
         android:id="@+id/activity_courses_single_lecturer"
+        style="@style/StudyProgram_Card_Text"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
+        android:background="@color/Fusion_Red"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/activity_courses_single_course" />
 
     <TextView
         android:id="@+id/activity_courses_single_semester"
+        style="@style/StudyProgram_Card_Text"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
+        android:background="@color/Fusion_Red"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/activity_courses_single_lecturer" />
 
     <TextView
         android:id="@+id/activity_courses_single_ects"
+        style="@style/StudyProgram_Card_Text"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
+        android:background="@color/Fusion_Red"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/activity_courses_single_semester" />
 
     <TextView
         android:id="@+id/activity_courses_single_sws"
+        style="@style/StudyProgram_Card_Text"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
+        android:background="@color/Fusion_Red"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/activity_courses_single_ects" />
@@ -73,15 +78,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/activity_courses_single_picture" />
+        app:layout_constraintTop_toBottomOf="@+id/activity_courses_single_picture"
+        app:shapeAppearance = "@style/ShapeAppearance.StudyHelper.RoundButton"/>
 
     <TextView
         android:id="@+id/activity_courses_single_picture"
+        style="@style/Subheading"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="16dp"
+        android:background="@color/Fusion_Red"
         android:text="Would you like to upload a related picture?"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -90,11 +98,13 @@
 
     <TextView
         android:id="@+id/activity_courses_single_textview_notes"
+        style="@style/Subheading"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
+        android:background="@color/Fusion_Red"
         android:text="Would you like to add some Notes?"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -106,9 +116,10 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
+        android:background="@color/white"
         android:ems="10"
         android:gravity="start|top"
         android:hint="e.g. Exam Dates, Home Assignments, etc."
@@ -129,5 +140,6 @@
         android:text="Save Notes"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:shapeAppearance="@style/ShapeAppearance.StudyHelper.RoundButton" />
 </androidx.constraintlayout.widget.ConstraintLayout>

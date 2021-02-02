@@ -26,7 +26,8 @@
         android:text="Log In or Sign Up"
         app:layout_constraintEnd_toEndOf="@+id/landing_password"
         app:layout_constraintStart_toStartOf="@+id/landing_password"
-        app:layout_constraintTop_toBottomOf="@+id/landing_password" />
+        app:layout_constraintTop_toBottomOf="@+id/landing_password"
+        app:shapeAppearance = "@style/ShapeAppearance.StudyHelper.RoundButton"/>
 
     <EditText
         android:id="@+id/landing_password"

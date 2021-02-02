@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/CardView_Custom"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardElevation="8dp"
     android:layout_margin="8dp"
-    xmlns:tools="http://schemas.android.com/tools">
+    app:cardElevation="8dp"
+    app:strokeColor="@color/Fusion_Red"
+    app:strokeWidth="8dp"
+    app:shapeAppearance="@style/ShapeAppearance.StudyHelper.MediumComponent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/linearLayout"
@@ -15,6 +19,7 @@
 
         <TextView
             android:id="@+id/item_studyprogram_header"
+            style="@style/StudyProgram_Heading"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -30,6 +35,7 @@
 
         <TextView
             android:id="@+id/item_sutdyprogram_TextView1"
+            style="@style/StudyProgram_Card_Text"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -53,6 +59,7 @@
 
         <TextView
             android:id="@+id/item_studyprogram_TextView2"
+            style="@style/StudyProgram_Card_Text"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -76,6 +83,7 @@
 
         <TextView
             android:id="@+id/item_studyprogram_TextView3"
+            style="@style/StudyProgram_Card_Text"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -98,6 +106,7 @@
 
         <TextView
             android:id="@+id/item_studytype_TextView4"
+            style="@style/StudyProgram_Card_Text"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"

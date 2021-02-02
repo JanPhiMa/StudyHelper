@@ -8,13 +8,14 @@
 
     <TextView
         android:id="@+id/study_type_title"
+        style="@style/Courses_Heading"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginTop="25dp"
         android:layout_marginEnd="10dp"
-        android:textSize="24dp"
         android:text="Study Type"
+        android:textSize="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -53,6 +54,7 @@
         android:text="Take the Test"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:shapeAppearance = "@style/ShapeAppearance.StudyHelper.RoundButton"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

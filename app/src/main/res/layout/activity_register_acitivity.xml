@@ -51,5 +51,6 @@
         android:text="Sign Up"
         app:layout_constraintEnd_toEndOf="@+id/register_password2_text"
         app:layout_constraintStart_toStartOf="@+id/register_password2_text"
-        app:layout_constraintTop_toBottomOf="@+id/register_password2_text" />
+        app:layout_constraintTop_toBottomOf="@+id/register_password2_text"
+        app:shapeAppearance = "@style/ShapeAppearance.StudyHelper.RoundButton"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
