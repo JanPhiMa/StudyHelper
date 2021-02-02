@@ -24,6 +24,8 @@ class StudyTypeFragment : Fragment() {
 
     private lateinit var studyTypeViewModel: StudyTypeViewModel
 
+
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -67,5 +69,12 @@ class StudyTypeFragment : Fragment() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
+    }
+    override fun onResume() {
+        super.onResume()
+            val sharedPreferences = requireActivity().getSharedPreferences(requireActivity().packageName, Context.MODE_PRIVATE)
+            val savedType = sharedPreferences.getString(typeKey, null)
+
+            study_type_title.text = savedType
     }
 }

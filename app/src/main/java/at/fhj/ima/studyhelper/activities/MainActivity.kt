@@ -7,27 +7,24 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.TextView
-import android.widget.Toast
-import com.google.android.material.navigation.NavigationView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
+import androidx.appcompat.widget.Toolbar
+import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
-import androidx.drawerlayout.widget.DrawerLayout
-import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.app.AppCompatDelegate
-import androidx.appcompat.widget.Toolbar
 import at.fhj.ima.studyhelper.R
 import at.fhj.ima.studyhelper.activities.LandingActivity.Companion.usernameKey
-import kotlinx.android.synthetic.main.activity_landing.*
-import kotlinx.android.synthetic.main.fragment_study_type.*
-import kotlinx.android.synthetic.main.nav_header_main.*
+import com.google.android.material.navigation.NavigationView
 
 class MainActivity : AppCompatActivity() {
     companion object {
         val darkModeKey = "DARKMODE"
     }
+
     private lateinit var appBarConfiguration: AppBarConfiguration
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -47,9 +44,9 @@ class MainActivity : AppCompatActivity() {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
-            setOf(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_studyType
-            ), drawerLayout
+                setOf(
+                        R.id.nav_home, R.id.nav_gallery, R.id.nav_studyType
+                ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)

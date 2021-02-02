@@ -1,6 +1,7 @@
 package at.fhj.ima.studyhelper.activities
 
 import android.content.Context
+import android.content.Intent
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -9,7 +10,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import at.fhj.ima.studyhelper.R
 import at.fhj.ima.studyhelper.adapters.QuestionAdapter
 import at.fhj.ima.studyhelper.adapters.QuestionViewholder
+import at.fhj.ima.studyhelper.classes.StudyType
 import at.fhj.ima.studyhelper.data.StudyTypeRepository
+import at.fhj.ima.studyhelper.ui.StudyType.StudyTypeFragment
 import kotlinx.android.synthetic.main.activity_study_type.*
 import kotlinx.android.synthetic.main.item_study_question.*
 
@@ -17,6 +20,7 @@ class StudyTypeActivity : AppCompatActivity() {
     companion object {
         val typeKey = "TYPEKEY"
         val typeTextKey = "TEXT"
+        val LOADFRAGMENT = "LOADFRAGMENT"
     }
     val questionAdapter = QuestionAdapter()
 
