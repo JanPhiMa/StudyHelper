@@ -187,8 +187,12 @@ init {
             )
     )
 }
-    fun readQuestions(): List<Questions>{
-        return questions
+    fun readQuestions(): List<QuestionAnswerWrapper>{
+        return questions.map {
+            QuestionAnswerWrapper(
+                    question = it
+            )
+        }
     }
     fun readType(string:String): StudyType {
         for (entry in answers) {
@@ -199,3 +203,8 @@ init {
         return answers[3]
     }
 }
+
+data class QuestionAnswerWrapper(
+        val question: Questions,
+        var selectedType: Int? = null
+)

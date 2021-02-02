@@ -35,6 +35,7 @@ class StudyProgramActivity : AppCompatActivity() {
         UserRepository.addSemester(this, user, semesterSpinner.selectedItem.toString())
 
         startActivity(intent)
+        finish()
     }
 
 

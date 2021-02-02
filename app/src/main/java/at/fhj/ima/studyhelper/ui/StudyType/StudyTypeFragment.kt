@@ -16,6 +16,7 @@ import at.fhj.ima.studyhelper.activities.MainActivity
 import at.fhj.ima.studyhelper.activities.StudyTypeActivity
 import at.fhj.ima.studyhelper.activities.StudyTypeActivity.Companion.typeKey
 import at.fhj.ima.studyhelper.activities.StudyTypeActivity.Companion.typeTextKey
+import at.fhj.ima.studyhelper.data.StudyTypeRepository
 import kotlinx.android.synthetic.main.fragment_study_type.*
 
 class StudyTypeFragment : Fragment() {
@@ -62,5 +63,9 @@ class StudyTypeFragment : Fragment() {
         val savedType = sharedPreferences.getString(typeKey, null)
 
         study_type_title.text = savedType
+    }
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
     }
 }

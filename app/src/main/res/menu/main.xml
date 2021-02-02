@@ -3,13 +3,17 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
+        android:id="@+id/action_studyprogram"
+        android:orderInCategory="100"
+        android:title="Choose Study Program"
+        app:showAsAction="never" />
+    <item
         android:id="@+id/action_logout"
         android:orderInCategory="100"
         android:title="@string/action_logout"
         app:showAsAction="never" />
     <item
-        android:id="@+id/action_studyprogram"
-        android:orderInCategory="100"
-        android:title="Choose Study Program"
-        app:showAsAction="never" />
+        android:id="@+id/action_dark_mode"
+        android:title="🌙☀️"
+        app:showAsAction="always" />
 </menu>
