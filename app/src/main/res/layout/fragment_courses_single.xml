@@ -14,7 +14,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/activity_courses_single_course"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@mipmap/pic_background_foreground"
         tools:src="@tools:sample/backgrounds/scenic" />
 
@@ -69,13 +69,12 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:text="Upload Picture"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/activity_courses_single_sws"
+        app:layout_constraintTop_toBottomOf="@+id/activity_courses_single_button_notes"
         app:shapeAppearance="@style/ShapeAppearance.StudyHelper.RoundButton"
         tools:ignore="HardcodedText" />
 
@@ -85,7 +84,7 @@
         android:layout_height="0dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/activity_courses_single_textview_notes"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView_course_single"
         app:layout_constraintEnd_toEndOf="@+id/activity_courses_single_button"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/activity_courses_single_button"
@@ -94,33 +93,47 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/image_recycler_view"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:background="@color/white"
             android:clipToPadding="false"
-            android:minHeight="250sp"
             tools:listitem="@layout/image_list_item" />
     </ScrollView>
+
     <TextView
         android:id="@+id/activity_courses_single_textview_notes"
         style="@style/Subheading"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="3dp"
+        android:layout_marginTop="16dp"
         android:text="Notes"
         android:textAlignment="center"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/scrollView_courses_notes"
         app:layout_constraintEnd_toEndOf="@+id/scrollView_courses_notes"
-        app:layout_constraintStart_toStartOf="@+id/scrollView_courses_notes" />
+        app:layout_constraintStart_toStartOf="@+id/scrollView_courses_notes"
+        app:layout_constraintTop_toBottomOf="@+id/activity_courses_single_sws" />
+
+    <Button
+        android:id="@+id/activity_courses_single_button_notes"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="Save Notes"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView_courses_notes"
+        app:shapeAppearance="@style/ShapeAppearance.StudyHelper.RoundButton" />
 
     <ScrollView
         android:id="@+id/scrollView_courses_notes"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/activity_courses_single_button_notes"
+        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="@+id/activity_courses_single_button_notes"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/activity_courses_single_button_notes">
+        app:layout_constraintStart_toStartOf="@+id/activity_courses_single_button_notes"
+        app:layout_constraintTop_toBottomOf="@+id/activity_courses_single_textview_notes">
 
         <EditText
             android:id="@+id/activity_courses_single_notesection"
@@ -131,22 +144,9 @@
             android:gravity="start|top"
             android:hint="e.g. Exam Dates, Home Assignments, etc."
             android:inputType="textMultiLine"
-            android:maxHeight="100sp"
-            android:minHeight="100sp"
+            android:maxHeight="70sp"
+            android:minHeight="70sp"
             android:textSize="14sp" />
     </ScrollView>
-
-    <Button
-        android:id="@+id/activity_courses_single_button_notes"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="8dp"
-        android:text="Save Notes"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:shapeAppearance="@style/ShapeAppearance.StudyHelper.RoundButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
