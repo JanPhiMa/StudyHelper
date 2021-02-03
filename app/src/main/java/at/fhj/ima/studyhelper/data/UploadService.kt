@@ -3,6 +3,7 @@ package at.fhj.ima.studyhelper.data
 import android.database.Observable
 import android.net.Uri
 import android.service.voice.AlwaysOnHotwordDetector
+import androidx.room.Delete
 import at.fhj.ima.studyhelper.API.bearerToken
 import at.fhj.ima.studyhelper.API.longToken
 import com.squareup.moshi.Json
@@ -67,4 +68,11 @@ interface UploadService {
         "accept: application/vnd.lewdcat.json"
     )
     fun getAlbumImages(@Path("id") id: String): Call<AlbumIdList>
+
+    @DELETE("file/{id}")
+    @Headers(
+        "authorization: $longToken",
+        "accept: application/vnd.lewdcat.json"
+    )
+    fun deleteImage(@Path("id") id: String): Call<ResponseBody>
 }
