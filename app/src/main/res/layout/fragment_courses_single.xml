@@ -95,28 +95,11 @@
             android:id="@+id/image_recycler_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginHorizontal="10dp"
             android:background="@color/white"
             android:clipToPadding="false"
             android:minHeight="250sp"
             tools:listitem="@layout/image_list_item" />
-    </ScrollView><![CDATA[
-
-
-    />
-
-
-
-
-
-
-
-
-
-
-
-    ]]>
-
+    </ScrollView>
     <TextView
         android:id="@+id/activity_courses_single_textview_notes"
         style="@style/Subheading"
