@@ -20,7 +20,6 @@ class StudyTypeActivity : AppCompatActivity() {
     companion object {
         val typeKey = "TYPEKEY"
         val typeTextKey = "TEXT"
-        val LOADFRAGMENT = "LOADFRAGMENT"
     }
     val questionAdapter = QuestionAdapter()
 

@@ -1,14 +1,11 @@
 package at.fhj.ima.studyhelper.adapters
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import at.fhj.ima.studyhelper.R
-import at.fhj.ima.studyhelper.activities.StudyProgramActivity
 import at.fhj.ima.studyhelper.classes.Courses
-import at.fhj.ima.studyhelper.classes.StudyProgram
 import kotlinx.android.synthetic.main.item_courses.view.*
 
 class CoursesAdapter(val clickListener: (courses: Courses) -> Unit): RecyclerView.Adapter<CoursesViewHolder>(){

@@ -101,18 +101,6 @@ class CameraFragment : Fragment() {
         cameraExecutor = Executors.newSingleThreadExecutor()
     }
 
-    /*class TokenInterceptor : Interceptor {
-        @Throws(IOException::class)
-        override fun intercept(chain: Interceptor.Chain): okhttp3.Response {
-
-            //rewrite the request to add bearer token
-            val newRequest: Request = chain.request().newBuilder()
-                    .header("Authorization", "Bearer $bearerToken")
-                    .build()
-            return chain.proceed(newRequest)
-        }
-    }*/
-
     private fun takePhoto() {
         val imageCapture = imageCapture ?: return
 

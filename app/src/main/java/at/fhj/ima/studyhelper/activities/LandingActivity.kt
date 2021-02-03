@@ -10,7 +10,6 @@ import at.fhj.ima.studyhelper.R
 import at.fhj.ima.studyhelper.activities.MainActivity.Companion.darkModeKey
 import at.fhj.ima.studyhelper.data.UserRepository
 import kotlinx.android.synthetic.main.activity_landing.*
-import kotlinx.android.synthetic.main.nav_header_main.*
 
 
 class LandingActivity : AppCompatActivity() {

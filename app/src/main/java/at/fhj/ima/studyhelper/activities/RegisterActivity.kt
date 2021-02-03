@@ -30,7 +30,7 @@ class RegisterActivity : AppCompatActivity() {
         register_signup_button.setOnClickListener {
             when {
                 register_username_text.text.toString() == UserRepository.findUser(this, register_username_text.text.toString())?.username -> Toast.makeText(this, "Username is already taken!", Toast.LENGTH_SHORT).show()
-                register_username_text.text.length < 5 -> Toast.makeText(this, "Username needs to be at least 5 characters long!", Toast.LENGTH_SHORT).show()
+                register_username_text.text.length < 6 -> Toast.makeText(this, "Username needs to be at least 6 characters long!", Toast.LENGTH_SHORT).show()
                 register_password_text.text.length < 12 -> Toast.makeText(this, "Password needs to be at least 12 characters long!", Toast.LENGTH_SHORT).show()
                 register_password2_text.text.toString() != register_password_text.text.toString() -> Toast.makeText(this, "Passwords don't match!", Toast.LENGTH_SHORT).show()
                 else -> {
