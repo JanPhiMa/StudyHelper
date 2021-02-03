@@ -547,7 +547,7 @@ object CoursesRepository {
             ),
             Courses(
                 "Software Engineering Basic",
-                "Lukas BLoder, Peter Salhofer",
+                "Lukas Bloder, Peter Salhofer",
                 3,
                 5.0,
                 4.0,
@@ -635,7 +635,7 @@ object CoursesRepository {
             ),
             Courses(
                 "Medientheorien und Medienkritik",
-                "Heinz M. Fischer, Matthias Forenbacher, Eva Goldgruber, Gudrun Reimerth, Susanne Sackl - Sharif, Heinz Peter Wassermann, Thomas Wolkinger",
+                "Heinz M. Fischer, Matthias Forenbacher, et al",
                 3,
                 4.0,
                 3.0,
@@ -787,7 +787,7 @@ object CoursesRepository {
             ),
             Courses(
                 "Medien und Gesellschaft",
-                "Heinz M. Fischer, Eva Goldgruber, Robert Gutounig, Tanja Hatzl - Schönbacher, Wolfgang Kühnelt, Gudrun Reimerth, Susanne Sackl - Sharif, Heinz Peter Wassermann, Thomas Wolkinger",
+                "Heinz M. Fischer, Eva Goldgruber, et al",
                 4,
                 8.0,
                 3.0,
@@ -1003,7 +1003,7 @@ object CoursesRepository {
             ),
             Courses(
                 "Vorbereitendes Seminar zur Bachelorarbeit",
-                "Heinz M. Fischer, Eva Goldgruber, Gudrun Reimerth, Heinz Peter Wassermann, Thomas Wolkinger",
+                "Heinz M. Fischer, Eva Goldgruber, et al",
                 5,
                 2.0,
                 1.0,
@@ -1035,7 +1035,7 @@ object CoursesRepository {
             ),
             Courses(
                 "Newsroom: Projekt",
-                "Boris Böttinger, Stefan Schmid, Alfred Schwarzenberger, Thomas Wolkinger",
+                "Boris Böttinger, Stefan Schmid, et al",
                 5,
                 8.0,
                 4.0,
@@ -1219,7 +1219,7 @@ object CoursesRepository {
             ),
             Courses(
                 "Seminar zur Bachelorarbeit",
-                "Boris Böttinger, Heinz M. Fischer, Eva Goldgruber, Tanja Hatzl - Schönbacher, Wolfgang Kühnelt, Edith Podhovnik, Ulrike Pölzl - Hobusch, Gudrun Reimerth, Heinz Peter Wassermann, Thomas Wolkinger",
+                "Boris Böttinger, Heinz M. Fischer, et al",
                 6,
                 2.0,
                 1.0,
@@ -1235,7 +1235,7 @@ object CoursesRepository {
             ),
             Courses(
                 "Praktikumsbegleitendes Seminar",
-                "Boris Böttinger, Heinz M. Fischer, Eva Goldgruber, Tanja Hatzl - Schönbacher, Wolfgang Kühnelt, Edith Podhovnik, Ulrike Pölzl - Hobusch, Gudrun Reimerth, Heinz Peter Wassermann, Thomas Wolkinger",
+                "Boris Böttinger, Heinz M. Fischer, et al",
                 6,
                 1.0,
                 1.0,
@@ -1243,7 +1243,7 @@ object CoursesRepository {
             ),
             Courses(
                 "Bachelorprüfung",
-                "Baptiste Alcalde, Markus Bödenler, Sten Hanke, Karin Messer - Misak, Robert Mischak, Bernhard Neumayer, Anita Töchterle",
+                "Baptiste Alcalde, Markus Bödenler, et al",
                 6,
                 1.0,
                 0.0,
@@ -1275,7 +1275,7 @@ object CoursesRepository {
             ),
             Courses(
                 "Bachelorarbeit - DPA",
-                "Baptiste Alcalde, Markus Bödenler, Sten Hanke, Karin Messer - Misak, Robert Mischak, Bernhard Neumayer",
+                "Baptiste Alcalde, Markus Bödenler, et al",
                 6,
                 9.0,
                 1.25,
@@ -1291,7 +1291,7 @@ object CoursesRepository {
             ),
             Courses(
                 "Bachelorarbeit - HIS",
-                "Baptiste Alcalde, Markus Bödenler, Sten Hanke, Karin Messer - Misak, Robert Mischak, Bernhard Neumayer",
+                "Baptiste Alcalde, Markus Bödenler, et al",
                 6,
                 9.0,
                 1.25,

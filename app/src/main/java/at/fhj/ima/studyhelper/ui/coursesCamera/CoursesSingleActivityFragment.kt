@@ -16,6 +16,9 @@ import kotlinx.android.synthetic.main.fragment_courses_single.*
 
 
 class CoursesSingleActivityFragment : Fragment() {
+    companion object{
+        val notesKey = "NOTES"
+    }
 
     private lateinit var navController: NavController
 
@@ -30,12 +33,18 @@ class CoursesSingleActivityFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val sharedPreferences = requireActivity().getSharedPreferences(requireActivity().packageName, Context.MODE_PRIVATE)
+
+        activity_courses_single_button_notes.setOnClickListener {
+            sharedPreferences.edit().putString(notesKey, activity_courses_single_notesection.text.toString()).apply()
+        }
+
         activity_courses_single_course.text = requireActivity().intent.getStringExtra(HomeFragment.EXTRA_COURSE_COURSE)
         activity_courses_single_semester.text = ("Semester of relevance: " + requireActivity().intent.getStringExtra(HomeFragment.EXTRA_COURSE_SEMESTER))
         activity_courses_single_lecturer.text = ("Course Lecturer(s): " + requireActivity().intent.getStringExtra(HomeFragment.EXTRA_COURSE_LECTURER))
         activity_courses_single_ects.text = ("Course ECTS Credits: " + requireActivity().intent.getStringExtra(HomeFragment.EXTRA_COURSE_ECTS))
         activity_courses_single_sws.text = ("Weekly hours: " + requireActivity().intent.getStringExtra(HomeFragment.EXTRA_COURSE_SWS))
-
+        activity_courses_single_notesection.setText(sharedPreferences.getString(notesKey, null))
         view.findViewById<Button>(R.id.activity_courses_single_button).setOnClickListener {
             navController.navigate(R.id.action_main_to_camera)
         }

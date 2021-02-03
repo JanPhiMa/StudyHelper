@@ -7,4 +7,19 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="karminrot">#A2231D</color>
+    <color name="High_Blue">#45aaf2</color>
+    <color name="Royal_Blue">#3867d6</color>
+    <color name="Lighter_purple">#a55eea</color>
+    <color name="Gloomy_purple">#8854d0</color>
+    <color name="Beniukon_Bronze">#fa8231</color>
+    <color name="Reptile_Green">#26de81</color>
+    <color name="Algae_Fuel">#20bf6b</color>
+    <color name="Orange_Hibiscus">#fd9644</color>
+    <color name="Maximum_Blue_Green">#2bcbba</color>
+    <color name="Fusion_Red">#fc5c65</color>
+    <color name="Old_Germanium">#cf6a87</color>
+    <color name="Blue_Grey">#778ca3</color>
+    <color name="NYC_Taxi">#f7b731</color>
+    <color name="Blue_Horizon">#4b6584</color>
 </resources>

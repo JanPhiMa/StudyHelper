@@ -50,10 +50,7 @@ class HomeFragment : Fragment() {
         homeViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
-        val textView2: TextView = root.findViewById(R.id.text_home_2)
-        homeViewModel.text2.observe(viewLifecycleOwner, Observer {
-            textView2.text = it
-        })
+
         return root
     }
 
