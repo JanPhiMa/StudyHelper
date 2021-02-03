@@ -6,8 +6,8 @@
         <item name="colorPrimaryVariant">@color/Fusion_Red</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/Old_Germanium</item>
-        <item name="colorSecondaryVariant">@color/Old_Germanium</item>
+        <item name="colorSecondary">@color/Fusion_Red</item>
+        <item name="colorSecondaryVariant">@color/Fusion_Red</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
@@ -42,11 +42,7 @@
     <style name="ShapeAppearance.StudyHelper.MediumComponent"
             parent = "ShapeAppearance.MaterialComponents.MediumComponent">
         <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">16dp</item>
-        <item name="cornerFamilyBottomRight">cut</item>
-        <item name="cornerFamilyBottomLeft">cut</item>
-        <item name="cornerFamilyTopLeft">cut</item>
-        <item name="cornerFamilyTopRight">cut</item>
+        <item name="cornerSize">12dp</item>
     </style>
 
     <style name="StudyProgram_Card_Text">
