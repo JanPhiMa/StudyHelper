@@ -547,7 +547,7 @@ object CoursesRepository {
             ),
             Courses(
                 "Software Engineering Basic",
-                "Lukas BLoder, Peter Salhofer",
+                "Lukas Bloder, Peter Salhofer",
                 3,
                 5.0,
                 4.0,
