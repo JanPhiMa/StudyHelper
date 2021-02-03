@@ -74,7 +74,8 @@ class StudyTypeFragment : Fragment() {
         super.onResume()
             val sharedPreferences = requireActivity().getSharedPreferences(requireActivity().packageName, Context.MODE_PRIVATE)
             val savedType = sharedPreferences.getString(typeKey, null)
-
+            val savedTypeText = sharedPreferences.getString(typeTextKey, null)
             study_type_title.text = savedType
+            text_study_type.text = savedTypeText
     }
 }
