@@ -39,7 +39,9 @@ class CoursesSingleActivityFragment : Fragment() {
             sharedPreferences.edit().putString(notesKey, activity_courses_single_notesection.text.toString()).apply()
         }
 
-        activity_courses_single_course.text = requireActivity().intent.getStringExtra(HomeFragment.EXTRA_COURSE_COURSE)
+        val courseName = requireActivity().intent.getStringExtra(HomeFragment.EXTRA_COURSE_COURSE)
+
+        activity_courses_single_course.text = courseName
         activity_courses_single_semester.text = ("Semester of relevance: " + requireActivity().intent.getStringExtra(HomeFragment.EXTRA_COURSE_SEMESTER))
         activity_courses_single_lecturer.text = ("Course Lecturer(s): " + requireActivity().intent.getStringExtra(HomeFragment.EXTRA_COURSE_LECTURER))
         activity_courses_single_ects.text = ("Course ECTS Credits: " + requireActivity().intent.getStringExtra(HomeFragment.EXTRA_COURSE_ECTS))
@@ -49,4 +51,5 @@ class CoursesSingleActivityFragment : Fragment() {
             navController.navigate(R.id.action_main_to_camera)
         }
     }
+
 }
