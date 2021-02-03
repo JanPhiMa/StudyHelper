@@ -133,7 +133,6 @@ class CoursesSingleActivityFragment : Fragment(), ImageRecyclerAdapter.ImageItem
                                 override fun onFailure(call: Call<AlbumIdList>, t: Throwable) {
                                     Log.i("ALBUMS", "Failed to get albums")
                                 }
-
                             })
                         }
                     }
@@ -189,6 +188,7 @@ class CoursesSingleActivityFragment : Fragment(), ImageRecyclerAdapter.ImageItem
                     recyclerView.adapter = ImageRecyclerAdapter(imagesList, idsList, this@CoursesSingleActivityFragment)
                 }
             }
+            .setNegativeButton("CANCEL") { _, _ -> }
             .create()
             .show()
     }

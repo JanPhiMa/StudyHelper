@@ -2,7 +2,6 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".CameraFragment"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
     android:background="#FF141414">
@@ -15,6 +14,13 @@
         android:layout_height="match_parent"
         android:hapticFeedbackEnabled="true"
         android:layout_above="@id/camera_button"/>
+
+    <ImageView
+        android:id="@+id/loading"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"/>
 
     <ImageButton
         android:layout_width="64dp"

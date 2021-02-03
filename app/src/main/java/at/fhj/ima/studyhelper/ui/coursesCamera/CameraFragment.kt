@@ -6,6 +6,7 @@ import android.content.pm.PackageManager
 import android.os.Bundle
 import android.util.Log
 import android.view.*
+import android.view.animation.AnimationUtils
 import android.widget.Toast
 import androidx.camera.core.CameraSelector
 import androidx.camera.core.ImageCapture
@@ -129,14 +130,11 @@ class CameraFragment : Fragment() {
 
                         val body = RequestBody.create(MediaType.parse("image/jpg"), photoFile.absoluteFile)
                         val multipart = MultipartBody.Part.createFormData("files[]", photoFile.name, body)
-                        //val multipart
+
+                        loading.setBackgroundResource(R.drawable.ic_loading_loader_svgrepo_com)
+                        loading.startAnimation(AnimationUtils.loadAnimation(requireContext(), R.anim.rotate))
 
                         CoroutineScope(Dispatchers.IO).launch {
-                            /*val interceptor = TokenInterceptor();
-
-                            val client = OkHttpClient.Builder()
-                                    .addInterceptor(interceptor)
-                                    .build()*/
 
                             val moshi = Moshi.Builder()
                                     .add(KotlinJsonAdapterFactory())
@@ -157,6 +155,7 @@ class CameraFragment : Fragment() {
                                             call: Call<ImageResponse>, response: Response<ImageResponse>
                                         ) {
                                             for (file in response.body()!!.files) {
+                                                //Make loading animation
                                                 if (file.name == uploadedFile) {
                                                     for (album in albumsListViewModel.albumsListData.value!!) {
                                                         if (album.name == requireActivity().intent.getStringExtra(HomeFragment.EXTRA_COURSE_COURSE)) {
