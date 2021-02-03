@@ -8,7 +8,7 @@
     android:layout_margin="8dp"
     app:cardElevation="8dp"
     app:strokeColor="@color/Fusion_Red"
-    app:strokeWidth="8dp"
+    app:strokeWidth="2dp"
     app:shapeAppearance="@style/ShapeAppearance.StudyHelper.MediumComponent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -19,7 +19,6 @@
 
         <TextView
             android:id="@+id/item_courses_textview_ects"
-            style="@style/StudyProgram_Card_Text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -30,7 +29,7 @@
 
         <TextView
             android:id="@+id/item_courses_textview_semester"
-            style="@style/StudyProgram_Card_Text"
+            style="@style/"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -41,7 +40,6 @@
 
         <TextView
             android:id="@+id/item_courses_textview_lecturer"
-            style="@style/StudyProgram_Card_Text"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -62,7 +60,6 @@
 
         <TextView
             android:id="@+id/item_courses_course"
-            style="@style/StudyProgram_Heading"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -70,6 +67,7 @@
             android:layout_marginEnd="8dp"
             android:text="Course"
             android:textSize="18sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -109,7 +107,6 @@
 
         <TextView
             android:id="@+id/item_courses_textview_sws"
-            style="@style/StudyProgram_Card_Text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"

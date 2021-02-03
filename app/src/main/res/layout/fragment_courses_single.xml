@@ -4,15 +4,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@mipmap/pic_background_foreground"
     tools:context=".FirstFragment">
+
+    <ImageView
+        android:id="@+id/imageView_course_single"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/activity_courses_single_course"
+        app:srcCompat="@mipmap/pic_background_foreground"
+        tools:src="@tools:sample/backgrounds/scenic" />
 
     <TextView
         android:id="@+id/activity_courses_single_course"
         style="@style/Heading"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@color/white"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,8 +33,6 @@
         style="@style/StudyProgram_Card_Text"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:background="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/activity_courses_single_course" />
@@ -34,8 +42,6 @@
         style="@style/StudyProgram_Card_Text"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="1dp"
-        android:background="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/activity_courses_single_lecturer" />
@@ -45,8 +51,6 @@
         style="@style/StudyProgram_Card_Text"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="1dp"
-        android:background="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/activity_courses_single_semester" />
@@ -56,8 +60,6 @@
         style="@style/StudyProgram_Card_Text"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="1dp"
-        android:background="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/activity_courses_single_ects" />
@@ -67,27 +69,14 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:text="Upload"
+        android:text="Upload Picture"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/activity_courses_single_picture"
-        app:shapeAppearance = "@style/ShapeAppearance.StudyHelper.RoundButton"/>
-
-    <TextView
-        android:id="@+id/activity_courses_single_picture"
-        style="@style/Subheading"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:background="@color/white"
-        android:text="Would you like to upload a related picture?"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/activity_courses_single_sws" />
+        app:layout_constraintTop_toBottomOf="@+id/activity_courses_single_sws"
+        app:shapeAppearance="@style/ShapeAppearance.StudyHelper.RoundButton" />
 
     <TextView
         android:id="@+id/activity_courses_single_textview_notes"
@@ -95,22 +84,22 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:background="@color/white"
-        android:text="Would you like to add some Notes?"
+        android:text="Notes"
+        android:textAlignment="center"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/activity_courses_single_notesection"
+        app:layout_constraintStart_toStartOf="@+id/activity_courses_single_notesection"
         app:layout_constraintTop_toBottomOf="@+id/activity_courses_single_button" />
 
     <EditText
         android:id="@+id/activity_courses_single_notesection"
+        style="@style/Notes"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="5dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
-        android:background="@color/white"
         android:ems="10"
         android:gravity="start|top"
         android:hint="e.g. Exam Dates, Home Assignments, etc."

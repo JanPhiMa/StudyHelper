@@ -8,7 +8,6 @@
 
     <TextView
         android:id="@+id/study_type_title"
-        style="@style/Courses_Heading"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -37,6 +36,7 @@
             android:id="@+id/text_study_type"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="#00FFFFFF"
             android:textAlignment="center"
             android:textSize="16dp"
             app:layout_constraintBottom_toTopOf="@+id/studytype_button"
