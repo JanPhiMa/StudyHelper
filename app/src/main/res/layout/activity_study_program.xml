@@ -36,7 +36,7 @@
         style="@style/Heading"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Semester:"
+        android:text="Semester: ▾"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="@+id/studyProgram_Header"
         app:layout_constraintTop_toBottomOf="@+id/studyProgram_Header" />

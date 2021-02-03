@@ -64,19 +64,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/activity_courses_single_ects" />
 
-    <TextView
-        android:id="@+id/activity_courses_single_picture"
-        style="@style/Subheading"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:background="@color/white"
-        android:text="Would you like to upload a related picture?"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/activity_courses_single_sws" />
-
     <Button
         android:id="@+id/activity_courses_single_button"
         android:layout_width="0dp"
@@ -88,54 +75,83 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/activity_courses_single_picture"
-        app:shapeAppearance = "@style/ShapeAppearance.StudyHelper.RoundButton"
+        app:layout_constraintTop_toBottomOf="@+id/activity_courses_single_sws"
+        app:shapeAppearance="@style/ShapeAppearance.StudyHelper.RoundButton"
         tools:ignore="HardcodedText" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/activity_courses_single_button"
-        tools:listitem="@layout/image_list_item"
-        android:id="@+id/image_recycler_view"
-        android:background="@color/white"
-        android:layout_marginHorizontal="10dp"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:clipToPadding="false"/>
+    <ScrollView
+        android:id="@+id/scrollView_courses_single"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/activity_courses_single_textview_notes"
+        app:layout_constraintEnd_toEndOf="@+id/activity_courses_single_button"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/activity_courses_single_button"
+        app:layout_constraintTop_toBottomOf="@+id/activity_courses_single_button">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/image_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="10dp"
+            android:background="@color/white"
+            android:clipToPadding="false"
+            android:minHeight="250sp"
+            tools:listitem="@layout/image_list_item" />
+    </ScrollView><![CDATA[
+
+
+    />
+
+
+
+
+
+
+
+
+
+
+
+    ]]>
 
     <TextView
         android:id="@+id/activity_courses_single_textview_notes"
         style="@style/Subheading"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginBottom="3dp"
         android:text="Notes"
         android:textAlignment="center"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="@+id/activity_courses_single_notesection"
-        app:layout_constraintStart_toStartOf="@+id/activity_courses_single_notesection"
-        app:layout_constraintTop_toBottomOf="@+id/image_recycler_view" />
-    />
+        app:layout_constraintBottom_toTopOf="@+id/scrollView_courses_notes"
+        app:layout_constraintEnd_toEndOf="@+id/scrollView_courses_notes"
+        app:layout_constraintStart_toStartOf="@+id/scrollView_courses_notes" />
 
-    <EditText
-        android:id="@+id/activity_courses_single_notesection"
-        style="@style/Notes"
+    <ScrollView
+        android:id="@+id/scrollView_courses_notes"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:ems="10"
-        android:gravity="start|top"
-        android:hint="e.g. Exam Dates, Home Assignments, etc."
-        android:inputType="textMultiLine"
-        android:textSize="14sp"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toTopOf="@+id/activity_courses_single_button_notes"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/activity_courses_single_textview_notes" />
+        app:layout_constraintEnd_toEndOf="@+id/activity_courses_single_button_notes"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/activity_courses_single_button_notes">
+
+        <EditText
+            android:id="@+id/activity_courses_single_notesection"
+            style="@style/Notes"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:ems="10"
+            android:gravity="start|top"
+            android:hint="e.g. Exam Dates, Home Assignments, etc."
+            android:inputType="textMultiLine"
+            android:maxHeight="100sp"
+            android:minHeight="100sp"
+            android:textSize="14sp" />
+    </ScrollView>
 
     <Button
         android:id="@+id/activity_courses_single_button_notes"
