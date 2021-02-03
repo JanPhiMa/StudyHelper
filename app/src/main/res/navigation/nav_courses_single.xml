@@ -10,7 +10,9 @@
         android:name="at.fhj.ima.studyhelper.ui.coursesCamera.CoursesSingleActivityFragment"
         android:label="CoursesSingleActivityFragment_Label"
         tools:layout="CoursesSingleActivityFragment_First">
-
+        <action
+            android:id="@+id/action_course_to_image"
+            app:destination="@id/ImageViewFragment"/>
         <action
             android:id="@+id/action_main_to_camera"
             app:destination="@id/CameraFragment" />
@@ -22,4 +24,12 @@
         android:label="CameraFragment_Label"
         tools:layout="@layout/fragment_camera">
     </fragment>
+
+    <fragment
+        android:id="@+id/ImageViewFragment"
+        android:name="at.fhj.ima.studyhelper.ui.coursesCamera.ImageViewFragment"
+        android:label="Image"
+        tools:layout="@layout/fragment_image_view">
+    </fragment>
+
 </navigation>

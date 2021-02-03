@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FirstFragment">
+    android:background="@mipmap/pic_background_foreground">
 
     <ImageView
         android:id="@+id/imageView_course_single"
@@ -64,6 +64,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/activity_courses_single_ects" />
 
+    <TextView
+        android:id="@+id/activity_courses_single_picture"
+        style="@style/Subheading"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:background="@color/white"
+        android:text="Would you like to upload a related picture?"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/activity_courses_single_sws" />
+
     <Button
         android:id="@+id/activity_courses_single_button"
         android:layout_width="0dp"
@@ -75,8 +88,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/activity_courses_single_sws"
-        app:shapeAppearance="@style/ShapeAppearance.StudyHelper.RoundButton" />
+        app:layout_constraintTop_toBottomOf="@+id/activity_courses_single_picture"
+        app:shapeAppearance = "@style/ShapeAppearance.StudyHelper.RoundButton"
+        tools:ignore="HardcodedText" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/activity_courses_single_button"
+        tools:listitem="@layout/image_list_item"
+        android:id="@+id/image_recycler_view"
+        android:background="@color/white"
+        android:layout_marginHorizontal="10dp"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:clipToPadding="false"/>
 
     <TextView
         android:id="@+id/activity_courses_single_textview_notes"
@@ -89,7 +115,8 @@
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="@+id/activity_courses_single_notesection"
         app:layout_constraintStart_toStartOf="@+id/activity_courses_single_notesection"
-        app:layout_constraintTop_toBottomOf="@+id/activity_courses_single_button" />
+        app:layout_constraintTop_toBottomOf="@+id/image_recycler_view" />
+    />
 
     <EditText
         android:id="@+id/activity_courses_single_notesection"
@@ -122,4 +149,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:shapeAppearance="@style/ShapeAppearance.StudyHelper.RoundButton" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

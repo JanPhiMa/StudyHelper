@@ -1,3 +1,4 @@
 package at.fhj.ima.studyhelper.API
 
-const val bearerToken = "0lIEENj6aNyccoKhKg4IQMuhIobqQQnlfyfdJyMgXUBBRgI1WsGFwPCQ6jtBLu1I"
+const val bearerToken = "7cCGHAVRjOXXuNjoj5EEgQ0ek7lFOrVeogZRrzB8uSVwOVfNJAskndthzY3t9yGQ"
+const val longToken = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJsZXdkY2F0Iiwic3ViIjo1NiwiaWF0IjoxNjEyMzUzNDYwMjU5LCJleHAiOjE2MTIzNTYwNTIyNTl9.OlT3_lVkTFOZt6N0j4YR-fcVbnLq3Wz6DzZMI0GH-wI"

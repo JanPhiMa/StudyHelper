@@ -4,11 +4,11 @@ import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
 class Picture (
-    val message:String,
-    val url:String,
+    val message: String,
     val name: String,
-    val hash:String,
-    val deleteUrl:String,
-    val size:Int,
-    val thumb:String
+    val hash: String,
+    val size: Int,
+    val url: String,
+    val thumb: String,
+    val deleteUrl: String
 )
