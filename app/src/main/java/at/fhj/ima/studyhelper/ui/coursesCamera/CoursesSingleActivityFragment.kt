@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.Toast
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
@@ -37,6 +38,7 @@ class CoursesSingleActivityFragment : Fragment() {
 
         activity_courses_single_button_notes.setOnClickListener {
             sharedPreferences.edit().putString(notesKey, activity_courses_single_notesection.text.toString()).apply()
+            Toast.makeText(requireActivity().applicationContext, "Notes saved!", Toast.LENGTH_SHORT).show()
         }
 
         activity_courses_single_course.text = requireActivity().intent.getStringExtra(HomeFragment.EXTRA_COURSE_COURSE)
