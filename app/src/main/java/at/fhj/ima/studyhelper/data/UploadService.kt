@@ -2,13 +2,18 @@ package at.fhj.ima.studyhelper.data
 
 import android.database.Observable
 import android.net.Uri
+import android.service.voice.AlwaysOnHotwordDetector
 import at.fhj.ima.studyhelper.API.bearerToken
+import at.fhj.ima.studyhelper.API.longToken
 import com.squareup.moshi.Json
 import com.squareup.moshi.Moshi
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
 import okhttp3.ResponseBody
+import org.json.JSONArray
+import org.json.JSONObject
 import retrofit2.Call
+import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.*
@@ -17,35 +22,49 @@ import java.io.FileWriter
 
 interface UploadService {
 
-    /*@Multipart
-    @POST("api/upload")
-    @Headers("authorization: ${UserPictureApi.accessToken}","accept: application/vnd.lewdcat.json")
-    fun uploadPhoto(
-        @Part ("form-data") file: File
-    ):Picture*/
-
-    /*@GET("/api/files")
-    @Headers("authorization: ${UserPictureApi.accessToken}","accept: application/vnd.kyotme.json")
-    fun getPhoto(id:Int)*/
-
-    /*@Multipart
-    @POST("api/upload")
-    @Headers("Authorization: Bearer ${UserPictureApi.accessToken}","accept: application/vnd.lewdcat.json")
-    fun uploadPhoto(@Part multipart: MultipartBody.Part):Call<ResponseBody>*/
-
+    // Upload a picture
     @Multipart
     @POST("upload")
     @Headers(
             "token: $bearerToken",
             "accept: application/vnd.lewdcat.json"
     )
-    //Bearer key
-    fun uploadPhoto(@Part multipart: MultipartBody.Part):Call<ResponseBody>
+    fun uploadPhoto(@Part multipart: MultipartBody.Part):Call<Picture>
 
-    /*ultipart
-    @POST("upload")
-    Call<ResponseBody> upload(
-    @Part("description") RequestBody description,
-    @Part MultipartBody.Part file
-    )*/
-    }
+    // Create an album
+    @POST("album/new")
+    @Headers(
+        "authorization: $longToken",
+        "accept: application/vnd.lewdcat.json"
+    )
+    fun createAlbum(@Body albumPayload: Map<String,String?>):Call<ResponseBody>
+
+    @POST("file/album/add")
+    @Headers(
+        "authorization: $longToken",
+        "content-type: application/json",
+        "accept: application/vnd.lewdcat.json"
+    )
+    fun addPhotoToAlbum(@Body albumSwitchPayload: RequestBody):Call<ResponseBody>
+
+    @GET("albums/mini")
+    @Headers(
+        "authorization: $longToken",
+        "accept: application/vnd.lewdcat.json"
+    )
+    fun getAlbums(): Call<ResponseData>
+
+    @GET("files")
+    @Headers(
+        "authorization: $longToken",
+        "accept: application/vnd.lewdcat.json"
+    )
+    fun getImages(): Call<ImageResponse>
+
+    @GET("album/{id}/full")
+    @Headers(
+        "authorization: $longToken",
+        "accept: application/vnd.lewdcat.json"
+    )
+    fun getAlbumImages(@Path("id") id: String): Call<AlbumIdList>
+}

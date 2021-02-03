@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@mipmap/pic_background_foreground"
-    tools:context=".FirstFragment">
+    android:background="@mipmap/pic_background_foreground">
 
     <TextView
         android:id="@+id/activity_courses_single_course"
@@ -62,20 +61,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/activity_courses_single_ects" />
 
-    <Button
-        android:id="@+id/activity_courses_single_button"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        android:text="Upload"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/activity_courses_single_picture"
-        app:shapeAppearance = "@style/ShapeAppearance.StudyHelper.RoundButton"/>
-
     <TextView
         android:id="@+id/activity_courses_single_picture"
         style="@style/Subheading"
@@ -89,6 +74,33 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/activity_courses_single_sws" />
 
+    <Button
+        android:id="@+id/activity_courses_single_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:text="Upload"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/activity_courses_single_picture"
+        app:shapeAppearance = "@style/ShapeAppearance.StudyHelper.RoundButton"
+        tools:ignore="HardcodedText" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/activity_courses_single_button"
+        tools:listitem="@layout/image_list_item"
+        android:id="@+id/image_recycler_view"
+        android:background="@color/white"
+        android:layout_marginHorizontal="10dp"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:clipToPadding="false"/>
+
     <TextView
         android:id="@+id/activity_courses_single_textview_notes"
         style="@style/Subheading"
@@ -100,7 +112,7 @@
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/activity_courses_single_button" />
+        app:layout_constraintTop_toBottomOf="@+id/image_recycler_view" />
 
     <EditText
         android:id="@+id/activity_courses_single_notesection"
@@ -133,4 +145,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:shapeAppearance="@style/ShapeAppearance.StudyHelper.RoundButton" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

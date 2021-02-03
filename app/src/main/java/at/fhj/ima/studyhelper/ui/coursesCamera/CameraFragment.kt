@@ -18,7 +18,8 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import at.fhj.ima.studyhelper.R
-import at.fhj.ima.studyhelper.data.UploadService
+import at.fhj.ima.studyhelper.data.*
+import at.fhj.ima.studyhelper.ui.home.HomeFragment
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import kotlinx.android.synthetic.main.fragment_camera.*
@@ -26,6 +27,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import okhttp3.*
+import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -41,13 +43,10 @@ import java.util.concurrent.Executors
 
 class CameraFragment : Fragment() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
     private lateinit var outputDirectory: File
     private lateinit var navController: NavController
     private lateinit var cameraExecutor: ExecutorService
+    private lateinit var albumsListViewModel: AlbumsListViewModel
     private lateinit var orientationEventListener: OrientationEventListener
 
     private var imageCapture: ImageCapture? = null
@@ -60,6 +59,7 @@ class CameraFragment : Fragment() {
     ): View? {
         setHasOptionsMenu(true)
         navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment)
+        albumsListViewModel = ViewModelProvider(requireActivity()).get(AlbumsListViewModel::class.java)
         return inflater.inflate(R.layout.fragment_camera, container, false)
     }
 
@@ -161,12 +161,53 @@ class CameraFragment : Fragment() {
                                     .build()
 
                             val service = retrofit.create(UploadService::class.java)
-                            service.uploadPhoto(multipart).enqueue(object : Callback<ResponseBody> {
-                                override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
-                                    Log.i(TAG, response.toString())
+                            service.uploadPhoto(multipart).enqueue(object : Callback<Picture> {
+                                override fun onResponse(call: Call<Picture>, response: Response<Picture>) {
+                                    val uploadedFile = response.body()!!.name
+                                    service.getImages().enqueue(object : Callback<ImageResponse> {
+                                        override fun onResponse(
+                                            call: Call<ImageResponse>, response: Response<ImageResponse>
+                                        ) {
+                                            for (file in response.body()!!.files) {
+                                                if (file.name == uploadedFile) {
+                                                    for (album in albumsListViewModel.albumsListData.value!!) {
+                                                        if (album.name == requireActivity().intent.getStringExtra(HomeFragment.EXTRA_COURSE_COURSE)) {
+                                                            val paramObject = JSONObject()
+                                                            paramObject.put("albumId", album.id)
+                                                            paramObject.put("fileId", file.id)
+                                                            val jsonbody = RequestBody.create(MediaType.parse("application/json"), paramObject.toString())
+                                                            service.addPhotoToAlbum(jsonbody).enqueue(object : Callback<ResponseBody> {
+                                                                override fun onResponse(
+                                                                    call: Call<ResponseBody>,
+                                                                    response: Response<ResponseBody>
+                                                                ) {
+                                                                    navController.navigateUp()
+                                                                }
+
+                                                                override fun onFailure(
+                                                                    call: Call<ResponseBody>,
+                                                                    t: Throwable
+                                                                ) {
+                                                                    Log.i("addPhotoToAlbum", "FAILED")
+                                                                }
+
+                                                            })
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+
+                                        override fun onFailure(
+                                            call: Call<ImageResponse>, t: Throwable
+                                        ) {
+                                            Log.i("getImages", t.toString())
+                                        }
+
+                                    })
                                 }
 
-                                override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+                                override fun onFailure(call: Call<Picture>, t: Throwable) {
                                     Log.e("Request failed", service.toString())
                                 }
                             })
