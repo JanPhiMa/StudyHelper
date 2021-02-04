@@ -20,6 +20,17 @@ A study helper created in the SWENGB Project during SS20.
  This will download the repository in that very folder. After that, open the project with AndroidStudio, either connect your Android phone or create a virtual device, and hit "run" above the space where the open tabs are shown. 
  This button is represented as a green triangle.
  
- ### ...or download the installation package [here](https://kyot.me/nphzxowov26k.apk)
+ ### ...or download the installation package [here](https://drive.google.com/file/d/1NpOOsp_ddpzA7P7wX6mvBQavO29Brk_l/view?usp=sharing)
  
- Please follow the steps in the user documentation to allow your phone to install an app from outside the Play Store. 
+1. **Allow installation from unknown sources in the app settings for chrome**
+
+![alt-text](https://i.imgur.com/ijfoqLT.png)
+![alt-text](https://i.imgur.com/dh4EcaI.png)
+
+2. Confirm the installation
+
+![alt-text](https://i.imgur.com/cpKHi8W.png)
+
+3.Confirm the Play Protect message by tapping "Install anyway"
+
+![alt-text](https://i.imgur.com/1D1onHF.png)
