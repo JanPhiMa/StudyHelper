@@ -20,7 +20,7 @@ A study helper created in the SWENGB Project during SS20.
  This will download the repository in that very folder. After that, open the project with AndroidStudio, either connect your Android phone or create a virtual device, and hit "run" above the space where the open tabs are shown. 
  This button is represented as a green triangle.
  
- ### ...or download the installation package [here](StudyHelper.apk)
+ ### ...or download the installation package [here](https://github.com/JanPhiMa/StudyHelper/raw/main/StudyHelper.apk)
  
 1. Allow installation from unknown sources in the app settings for chrome ("Settings" -> enable the toggle)
 
