@@ -7,7 +7,7 @@ A study helper created in the SWENGB Project during SS20.
 * Michael Horn
 * Jan Jursic
 
- ## [User Documentation]( https://kyot.me/isw2hyv7v7tr.pdf)
+ ## [User Documentation](https://drive.google.com/file/d/1uPK4eLLIk5T-dMLnJBoN2MLrPV2FtWFt/view?usp=sharing)
  
   
  ## How to install the StudyHelper:
