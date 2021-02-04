@@ -24,13 +24,13 @@ A study helper created in the SWENGB Project during SS20.
  
 1. Allow installation from unknown sources in the app settings for chrome ("Settings" -> enable the toggle)
 
-![alt-text](https://i.imgur.com/ijfoqLT.png)
-![alt-text](https://i.imgur.com/dh4EcaI.png)
+![alt-text](https://github.com/JanPhiMa/StudyHelper/blob/main/unknownsources1.jpg?raw=true)
+![alt-text](https://github.com/JanPhiMa/StudyHelper/blob/main/unknownsources2.jpg?raw=true)
 
 2. Confirm the installation
 
-![alt-text](https://i.imgur.com/cpKHi8W.png)
+![alt-text](https://github.com/JanPhiMa/StudyHelper/blob/main/installconfirm.jpg?raw=true)
 
 3.Confirm the Play Protect message by tapping "Install anyway"
 
-![alt-text](https://i.imgur.com/1D1onHF.png)
+![alt-text](https://github.com/JanPhiMa/StudyHelper/blob/main/playprotect.jpg?raw=true)
