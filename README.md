@@ -22,7 +22,7 @@ A study helper created in the SWENGB Project during SS20.
  
  ### ...or download the installation package [here](https://drive.google.com/file/d/1NpOOsp_ddpzA7P7wX6mvBQavO29Brk_l/view?usp=sharing)
  
-1. Allow installation from unknown sources in the app settings for chrome
+1. Allow installation from unknown sources in the app settings for chrome ("Settings" -> enable the toggle)
 
 ![alt-text](https://i.imgur.com/ijfoqLT.png)
 ![alt-text](https://i.imgur.com/dh4EcaI.png)
