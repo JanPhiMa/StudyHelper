@@ -10,7 +10,7 @@ A study helper created in the SWENGB Project during SS20.
  ## [User Documentation](https://drive.google.com/file/d/1uPK4eLLIk5T-dMLnJBoN2MLrPV2FtWFt/view?usp=sharing)
  
   
- ## How to install the StudyHelper:
+ ## Installation guide: 
  
  ### Build yourself...
  
