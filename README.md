@@ -3,7 +3,6 @@ A study helper created in the SWENGB Project during SS20.
 
 ## Team Members:
 * Arthur Braun
-* Michael Hörmann
 * Michael Horn
 * Jan Jursic
 
