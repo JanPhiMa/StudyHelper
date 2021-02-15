@@ -4,6 +4,7 @@ A study helper created in the SWENGB Project during SS20.
 ## Team Members:
 * Arthur Braun
 * Michael Horn
+* Michael Hörmann
 * Jan Jursic
 
  ## [User Documentation](https://github.com/JanPhiMa/StudyHelper/raw/main/User%20Documentation%20StudyHelper.pdf)
